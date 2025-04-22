@@ -1,0 +1,16 @@
+services:
+  castle-mock-soporte:
+    image: castlemock/castlemock
+    container_name: castlemock-soporte
+    ports:
+      - "8012:8080"
+    volumes:
+      - ./data/soporte:/root/.castlemock
+    networks:
+      - devNetworkArq
+    restart: unless-stopped
+
+networks:
+  devNetworkArq:
+    external: true
+
